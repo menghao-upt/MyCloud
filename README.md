@@ -52,16 +52,16 @@ MySQL5.5数据进行存储。
 
 之后了解到，纯js无法实现该功能，需要借助后台对HTTP header的Content-Disposition和Content-Type进行设置，由于我之前对此并不了解，一个人捣鼓了较长时间，仍然没有解决，因此向舍友求助。
 
-舍友通过查阅资料和之前的经验将其解决，向我解释原理，使我对http头的内容和浏览器对Response的操作有更深理解。
+舍友通过查阅资料和之前的经验将其解决。平时我对HTTP头的学习都是对文档进行泛泛的阅读，借着这个机会阅读了HTTP Content-type的对照表和Content-Disposition的参数说明，结合具体的功能实践对其有更加直观的理解。
 
-在浏览器接收返回信息时，一直无法接收文件数据，而通过直接运行php却可以下载文件。查阅jQuery中$.ajax的文档后发现，$.ajax回调函数接收的类型只有Json，XML等，并不包括其他文件类型，因此放弃使用.ajax就能解决问题。最终实现文件下载的功能。(之后了解到$.ajax请求返回图片等文件格式有两种方法，还没来得及细看。）
+在浏览器接收返回信息时，一直无法接收文件数据，而通过直接运行php却可以下载文件。查阅jQuery中$.ajax的文档后发现，$.ajax回调函数接收的类型只有Json，XML等，并不包括其他文件类型，因此放弃使用.ajax就能解决问题。最终实现文件下载的功能。(之后了解到$.ajax请求返回图片等文件格式有两种方法，可能跟jQuery对ajax封装有关系，未来需要读相关源码来了解原理。）
 
 [2]乱码问题
 ####
 带中文的文件在传输/存储中产生乱码的情况。通过查阅资料，通过以下方法解决：</br>
 
-*使用无BOM的编码方式。</br>
+*使用无BOM的编码方式。之后了解到BOM是windows对文件开头加了U+FEFF，以便将UTF-8与其他编码方式区别开来，这对其他类型文件有意义，而对HTML却是没有必要的，反而会产生乱码，锘这种问题。Mark：以后编辑代码的时候，时刻记得使用无BOM的utf-8编码，还有，不设置的话notepad++自动设置成带BOM的utf-8，略坑。</br>
 
-*前端，后台，数据库统一使用utf-8编码，包括PHP里mysql_query("set names utf8;")，MySQL里设置utf9_general_ci等。</br>
+*HTML的head设置meta标签属性为utf-8，PHP里mysql_query("set names utf8")，MySQL里设置utf9_general_ci等。之后再对这个过程进行学习，了解到client,connection,server之间传递数据都需要进行字符集的编码，在相同的编码方式下才不会出现乱码，而mysql的character_set_connection，character_set_client预定义latin1的编码方式，因此在使用时需要进行设置。</br>
 
 并对背后的原理进行一定了解。
