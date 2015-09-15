@@ -36,7 +36,7 @@ MySQL5.5数据进行存储。
 
 *使用jQuery，BootStrap实现前端布局，在disk.js里预定义所需要实现的函数，如AddFolder()，RenameFolder()等。后端创建数据库及表，字段，后端预先建立RenameFolder.php, NewFolder.php等文件，规定好传递数据的格式。
 
-*实现功能，在实现重命名文件时，引入Alertify.js；在实现上传文件时，引入Uploadify.js。通过Github/官网的文档快速学习使用。在实现下载功能时，遇到了第一个较大的技术困难[1]。
+*实现功能，在实现重命名文件时，引入Alertify.js；在实现上传文件时，引入Uploadify.js。通过Github/官网的文档快速学习使用（后来才发现FEX团队也发布了自己的WebUploader...囧）。在实现下载功能时，遇到了第一个较大的技术困难[1]。
 
 *大体功能实现后，将其转移至服务器进行部署测试，遇到乱码问题[2]。
 
