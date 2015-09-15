@@ -1,0 +1,31 @@
+/*
+ * disk.css
+ * written by Menghao, 2015/9/13
+ */
+ 
+.container-fluid {
+	margin-top:50px;
+}
+
+.sidebar{
+	position:fixed;
+}
+
+.sidebar li.active > a,
+.sidebar li.active > a:hover,
+.sidebar li.active > a:focus {
+  color: #fff;
+  cursor: default;
+  background-color: #428BCA;
+  border: 1px solid #fff;
+  border-bottom-color: transparent;
+}
+
+.sidebar li.nav-sidebar-add{
+	border-top:1px solid #9D9D9D;
+}
+
+p .btn-default {
+	margin-left:40%;
+}
+

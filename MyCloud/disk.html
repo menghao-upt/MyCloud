@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MyCloud</title>
+<!--  重置浏览器默认样式   -->
+<link rel="stylesheet" type="text/css" href="./stylesheet/reset.css"/>
+<!--  bootstrap 样式   -->
+<link rel="stylesheet" type="text/css" href="./stylesheet/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="./stylesheet/bootstrap-theme.css">
+<!--alerttifyjs 样式 -->
+<link rel="stylesheet" href="./stylesheet/alertify.core.css" />
+<link rel="stylesheet" href="./stylesheet/alertify.default.css" />
+<!--uploadify 样式  -->
+<link rel="stylesheet" type="text/css" href="./stylesheet/uploadify.css"/>
+<!--  本地 样式   -->
+<link rel="stylesheet" type="text/css" href="./stylesheet/disk.css">
+
+</head>
+<body>
+  <!--  标题栏     -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">MyCloud</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="./index.html">主页</a></li>
+          <li class="active"><a href="#">我的网盘</a></li>
+          <li><a href="./aboutThis.html">关于我</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <!--   侧边栏   -->
+      <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a href="#">全部文件夹<span class="sr-only">(current)</span></a></li>
+          <li class="nav-sidebar-add"><a href="#" id="prompt">+ 新建文件夹</a></li>
+        </ul>
+      </div>
+
+      <!--  主页面  -->
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">_name</h1>
+        <p>
+          <input type="file" name="file_upload" id="file_upload" />
+          <span><a href="#" id="id_upload">上传</a>
+          <a href="#" id="cancel_upload">重置上传队列</a>
+          </span>
+          <input type="hidden" value="1215154" name="tmpdir" id="id_file">
+          <button type="button" class="btn btn-default">文件夹重命名</button>
+          <button type="button" class="btn btn-danger sidebar-delete">删除文件夹</button>
+        </p>
+        <!--  文件显示列表   -->
+        <div class="row placeholders">
+          <div class="col-md-11">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="col-md-1">#</th>
+                  <th class="col-md-7">文件名</th>
+                  <th class="col-md-2">下载</th>
+                  <th class="col-md-2">删除</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--         Javascript           -->
+<script type="text/javascript" src="./script/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="./script/alertify.min.js"></script>
+<script type="text/javascript" src="./script/jquery.uploadify-3.1.min.js"></script>
+<script type="text/javascript" src="./script/disk.js"></script>
+</body>
+</html>
