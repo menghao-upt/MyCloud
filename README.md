@@ -60,7 +60,7 @@ MySQL5.5数据进行存储。
 ####
 带中文的文件在传输/存储中产生乱码的情况。通过查阅资料，通过以下方法解决：</br>
 
-*使用无BOM的编码方式。之后了解到BOM是windows对文件开头加了U+FEFF，以便将UTF-8与其他编码方式区别开来，这对其他类型文件有意义，而对HTML却是没有必要的，反而会产生乱码，锘这种问题。Mark：以后编辑代码的时候，时刻记得使用无BOM的utf-8编码，还有，不设置的话notepad++自动设置成带BOM的utf-8，略坑。</br>
+*使用无BOM的编码方式。之后了解到BOM是windows对文件开头加了U+FEFF，以便将UTF-8与其他编码方式区别开来，这对其他类型文件有意义，而对HTML却是没有必要的，反而会产生乱码，锘这种问题。Mark：以后编辑代码的时候，时刻记得使用无BOM的utf-8编码，还有，不设置的话notepad++自动设置成带BOM的utf-8，嗯..这个设定对web开发有点不友好。</br>
 
 *HTML的head设置meta标签属性为utf-8，PHP里mysql_query("set names utf8")，MySQL里设置utf9_general_ci等。之后再对这个过程进行学习，了解到client,connection,server之间传递数据都需要进行字符集的编码，在相同的编码方式下才不会出现乱码，而mysql的character_set_connection，character_set_client预定义latin1的编码方式，因此在使用时需要进行设置。</br>
 
