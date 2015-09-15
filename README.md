@@ -64,4 +64,3 @@ MySQL5.5数据进行存储。
 
 *HTML的head设置meta标签属性为utf-8，PHP里mysql_query("set names utf8")，MySQL里设置utf9_general_ci等。之后再对这个过程进行学习，了解到client,connection,server之间传递数据都需要进行字符集的编码，在相同的编码方式下才不会出现乱码，而mysql的character_set_connection，character_set_client预定义latin1的编码方式，因此在使用时需要进行设置。</br>
 
-并对背后的原理进行一定了解。
