@@ -10,7 +10,7 @@ MyCLoud简介
 对于文件，实现了上传文件，删除文件，下载文件，并对相同名字文件进行重命名的功能。</br>
 
 目前该项目还能实现网盘功能，将文件存储在服务器，并进行对应管理。</br>
-[点我点我去MyCloud看看](http://localhost/Mycloud/index.html)
+[点我点我去MyCloud看看](http://menghaoupt.com/MyCloud/index.html)
 
 技术情况
 ---
